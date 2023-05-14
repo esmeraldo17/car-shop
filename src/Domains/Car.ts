@@ -8,6 +8,6 @@ export default class Car extends Vehicle {
   constructor(car: ICar) {
     super(car);
     this.doorsQty = car.doorsQty;
-    this.seatsQty = car.seatQty;
+    this.seatsQty = car.seatsQty;
   }
 }

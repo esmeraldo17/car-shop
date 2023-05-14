@@ -34,4 +34,23 @@ export default class MotorcycleController {
       this.next(error);
     }
   }
+
+  public async findAll() {
+    try {
+      const motos = await this.service.findAll();
+      return this.res.status(200).json(motos);
+    } catch (error) {
+      this.next(error);
+    }
+  }
+
+  public async findById() {
+    const { id } = this.req.params;
+    try {
+      const { status, message } = await this.service.findById(id);
+      return this.res.status(status).json(message);
+    } catch (error) {
+      this.next(error);
+    }
+  }
 }

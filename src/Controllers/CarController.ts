@@ -21,7 +21,7 @@ export default class CarController {
       model,
       year,
       color,
-      status,
+      status: status || false,
       buyValue,
       doorsQty,
       seatsQty,

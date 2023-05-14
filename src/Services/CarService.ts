@@ -7,7 +7,7 @@ export default class CarService {
     const carModel = new CarModel();
     const cars = await carModel.create(car);
     if (cars) {
-      return new CarDomain(car);
+      return new CarDomain(cars);
     }
 
     return null;

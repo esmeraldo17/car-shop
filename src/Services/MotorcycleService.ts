@@ -3,6 +3,7 @@ import MotoDomain from '../Domains/Motorcycle';
 import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotoModel from '../Models/MotorcycleODM';
 
+const notFound = 'Motorcycle not found';
 export default class MotorcycleService {
   public async create(moto: IMotorcycle) {
     const motoModel = new MotoModel();
@@ -24,7 +25,7 @@ export default class MotorcycleService {
     if (!isValidObjectId(id)) return { status: 422, message: { message: 'Invalid mongo id' } };
     const motoModel = new MotoModel();
     const moto = await motoModel.findById(id);
-    if (moto === null) return { status: 404, message: { message: 'Motorcycle not found' } };
+    if (moto === null) return { status: 404, message: { message: notFound } };
     
     return { status: 200, message: new MotoDomain(moto) };
   }
@@ -33,8 +34,7 @@ export default class MotorcycleService {
     if (!isValidObjectId(id)) return { status: 422, message: { message: 'Invalid mongo id' } };
     const motoModel = new MotoModel();
     const updatedMoto = await motoModel.update(id, moto);
-    if (updatedMoto === null) return { status: 404, message: { message: 'Motorcycle not found' } };
-    
+    if (updatedMoto === null) return { status: 404, message: { message: notFound } };
     return { status: 200, message: new MotoDomain(moto) };
   }
 }

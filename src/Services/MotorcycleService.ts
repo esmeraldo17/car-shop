@@ -7,20 +7,16 @@ export default class MotorcycleService {
   public async create(moto: IMotorcycle) {
     const motoModel = new MotoModel();
     const motos = await motoModel.create(moto);
-    if (motos) {
-      return new MotoDomain(motos);
-    }
+    return new MotoDomain(motos);
 
-    return null;
+    // return null;
   }
 
   public async findAll() {
     const motoModel = new MotoModel();
     const motos = await motoModel.findAll();
-    const allMotos = motos.map((moto) => {
-      if (moto) return new MotoDomain(moto);
-      return null;
-    });
+    const allMotos = motos.map((moto) => new MotoDomain(moto));
+    
     return allMotos;
   }
 

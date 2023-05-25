@@ -27,7 +27,7 @@ Instale as dependências "Caso existam" com `npm install`
 ## Rotas da API
 
 ### Adicionar um carro
-Post `/cars`
+POST `/cars`
 | Parâmetro | Descrição |
 | :-------: | :-------- |
 | `model`   | tipo string obrigatório no body |
@@ -37,6 +37,28 @@ Post `/cars`
 | `buyValue` | tipo number obrigatório no body |
 | `doorsQty` | tipo number obrigatório no body |
 | `seatsQty` | tipo number obrigatório no body |
+
+### Listar todos os carros
+
+GET `/cars`
+
+### Listar carros por ID
+
+GET `/cars/:id` onde o ID deve ser um objectID valido
+
+### Atualizar um carro
+
+| Parâmetro | Descrição |
+| :-------: | :-------- |
+| `model`   | tipo string obrigatório no body |
+| `year`    | tipo number obrigatório no body |
+| `color`   | tipo string obrigatório no body |
+| `status`  |tipo bool nao obrigatório no body|
+| `buyValue` | tipo number obrigatório no body |
+| `doorsQty` | tipo number obrigatório no body |
+| `seatsQty` | tipo number obrigatório no body |
+
+PUT /cars/:id onde o ID deve ser um objectID valido
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
 

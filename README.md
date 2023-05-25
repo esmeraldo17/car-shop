@@ -48,6 +48,8 @@ GET `/cars/:id` onde o ID deve ser um objectID valido
 
 ### Atualizar um carro
 
+PUT /cars/:id onde o ID deve ser um objectID valido
+
 | Parâmetro | Descrição |
 | :-------: | :-------- |
 | `model`   | tipo string obrigatório no body |
@@ -58,7 +60,41 @@ GET `/cars/:id` onde o ID deve ser um objectID valido
 | `doorsQty` | tipo number obrigatório no body |
 | `seatsQty` | tipo number obrigatório no body |
 
-PUT /cars/:id onde o ID deve ser um objectID valido
+### Adicionar uma moto
+POST `/motorcycle`
+| Parâmetro | Descrição |
+| :-------: | :-------- |
+| `model`   | tipo string obrigatório no body |
+| `year`    | tipo number obrigatório no body |
+| `color`   | tipo string obrigatório no body |
+| `status`  |tipo bool nao obrigatório no body|
+| `buyValue` | tipo number obrigatório no body |
+| `category` | tipo string obrigatório no body |
+| `engineCapacity` | tipo number obrigatório no body |
+
+### Listar todos as moto
+
+GET `/motorcycle`
+
+### Listar motos por ID
+
+GET `/motorcycle/:id` onde o ID deve ser um objectID valido
+
+### Atualizar uma moto
+
+PUT /motorcycle/:id onde o ID deve ser um objectID valido
+
+| Parâmetro | Descrição |
+| :-------: | :-------- |
+| `model`   | tipo string obrigatório no body |
+| `year`    | tipo number obrigatório no body |
+| `color`   | tipo string obrigatório no body |
+| `status`  |tipo bool nao obrigatório no body|
+| `buyValue` | tipo number obrigatório no body |
+| `category` | tipo string obrigatório no body |
+| `engineCapacity` | tipo number obrigatório no body |
+
+
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
 

@@ -23,6 +23,20 @@ Instale as dependências "Caso existam" com `npm install`
  - **⚠ Atenção:** Caso opte por utilizar o Docker, **TODOS** os comandos disponíveis no `package.json` (npm start, npm test, npm run dev, ...) devem ser executados **DENTRO** do container, ou seja, no terminal que aparece após a execução do comando `docker exec` citado acima. 
   - **⚠ Atenção:** O **git** dentro do container não vem configurado com suas credenciais. Ou faça os commits fora do container, ou configure as suas credenciais do git dentro do container.
   - **⚠ Atenção:** Não rode o comando npm audit fix! Ele atualiza várias dependências do projeto, e essa atualização gera conflitos com o avaliador.
+
+## Rotas da API
+
+Adicionar um carro
+Post `/cars`
+| Parâmetro | Descrição |
+| :-------: | :-------- |
+| `model`   | tipo string obrigatório no body |
+| `year`    | tipo number obrigatório no body |
+| `color`   | tipo string obrigatório no body |
+| `status`  |tipo bool nao obrigatório no body|
+| `buyValue` | tipo number obrigatório no body |
+| `doorsQty` | tipo number obrigatório no body |
+| `seatsQty` | tipo number obrigatório no body |
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
 
